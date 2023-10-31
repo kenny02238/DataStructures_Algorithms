@@ -30,4 +30,4 @@ function practice(arr) {
   }
   return ans;
 }
-console.log(collector(arrs));
+console.log(practice(arrs));
