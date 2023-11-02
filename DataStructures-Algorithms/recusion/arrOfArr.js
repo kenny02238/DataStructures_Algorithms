@@ -3,6 +3,8 @@ let arrs = [[[["a", [["b", ["c"]], ["d"]]], [["e"]], [[["f", "g", "h"]]]]]];
 function collector(arr1) {
   let result = [];
   helper(arr1);
+  console.log(result);
+
   return result;
 
   function helper(arr2) {
