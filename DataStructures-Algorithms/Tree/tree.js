@@ -45,7 +45,7 @@ class BST {
       }
     }
   }
-
+  // --------------inOrder--------------
   inOrderMap(callback) {
     this.inOrderMapNode(this.root, callback);
   }
@@ -56,6 +56,19 @@ class BST {
       this.inOrderMapNode(node.right, callback);
     }
   }
+  // --------------preOrder--------------
+  preOrderMap(callback) {
+    this.preOrderMapNode(this.root, callback);
+  }
+  preOrderMapNode(node, callback) {
+    if (node !== null) {
+      callback(node.key);
+      this.preOrderMapNode(node.left, callback);
+      this.preOrderMapNode(node.right, callback);
+    }
+  }
+
+  // --------------postOrder--------------
 }
 
 const test = new BST();
