@@ -45,4 +45,24 @@ class BST {
       }
     }
   }
+
+  inOrderMap(callback) {
+    this.inOrderMapNode(this.root, callback);
+  }
+  inOrderMapNode(node, callback) {
+    if (node !== null) {
+      this.inOrderMapNode(node.left, callback);
+      callback(node.key);
+      this.inOrderMapNode(node.right, callback);
+    }
+  }
 }
+
+const test = new BST();
+
+test.insert(100);
+test.insert(90);
+test.insert(60);
+test.insert(120);
+test.insert(80);
+test.inOrderMap((value) => console.log(value));
