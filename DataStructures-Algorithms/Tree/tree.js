@@ -67,8 +67,17 @@ class BST {
       this.preOrderMapNode(node.right, callback);
     }
   }
-
   // --------------postOrder--------------
+  postOrderMap(callback) {
+    this.postOrderMapNode(this.root, callback);
+  }
+  postOrderMapNode(node, callback) {
+    if (node !== null) {
+      this.postOrderMapNode(node.left, callback);
+      this.postOrderMapNode(node.right, callback);
+      callback(node.key);
+    }
+  }
 }
 
 const test = new BST();
