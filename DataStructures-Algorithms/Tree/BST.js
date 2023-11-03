@@ -88,6 +88,16 @@ class BST {
       return this.searchRecursively(node.right, key);
     }
   }
+  searchIteratively(node, key) {
+    while (node !== null && key !== node.key) {
+      if (key < node.key) {
+        node = node.left;
+      } else {
+        node = node.right;
+      }
+    }
+    return node;
+  }
 }
 
 const test = new BST();
@@ -98,3 +108,4 @@ test.insert(60);
 test.insert(120);
 test.insert(80);
 // test.inOrderMap((value) => console.log(value));
+console.log(test.searchIteratively(test.root, 80));
