@@ -1,3 +1,6 @@
+// Merge Sort: is an efficient, general-purpose, comparison-based sorting algorithm.
+// The complexity is O(n log n).
+
 function merge(a1, a2) {
   let result = [];
   let i = 0;

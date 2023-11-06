@@ -1,3 +1,6 @@
+// Insertion Sort: is a simple sorting algorithm that builds the final sorted array (or list) one item at a time.
+// The complexity is O(n^2).
+
 let unsorted = [14, -4, 17, 6, 22, 1, -5];
 
 function insertionSort(arr) {

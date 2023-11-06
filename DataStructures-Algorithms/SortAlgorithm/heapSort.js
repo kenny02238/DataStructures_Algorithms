@@ -33,6 +33,9 @@
 //   }
 // }
 
+// HeapSort: is a comparison-based sorting algorithm. It is a special case of selection sort.
+// The complexity is O(nlogn).
+
 function heapSort() {
   buildMaxHeap();
   for (let i = arr.length - 1; i >= 0; i--) {

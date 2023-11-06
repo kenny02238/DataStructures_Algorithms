@@ -1,3 +1,6 @@
+// Selection Sort: is an in-place comparison sorting algorithm.
+// The complexity is O(n^2).
+
 let unsorted = [14, -4, 17, 6, 14, -3, 22, 1, -5];
 
 function selectionSort(arr) {

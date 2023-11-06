@@ -1,3 +1,6 @@
+// BobbleSort: is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements
+// if they are in wrong order. It is also known as sinking sort. The complexity is O(n^2).
+
 function bubbleSort(arr) {
   let step = 0;
   for (let i = 0; i <= arr.length - 2; i++) {

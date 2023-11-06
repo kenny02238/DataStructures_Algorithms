@@ -1,3 +1,6 @@
+// Quick Sort: is an efficient, general-purpose, comparison-based sorting algorithm.
+// The complexity is O(n log n).
+
 // let arr = [15, 3, 17, -17, 3.1415, 18, 20, 2, 1, 666];
 // quickSort(0, arr.length - 1);
 // console.log(arr);
