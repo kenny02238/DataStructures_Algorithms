@@ -1,3 +1,5 @@
+// Stack: is a data structure that follows the LIFO (Last In First Out) principle.
+
 class Stack {
   #items = [];
   push(element) {

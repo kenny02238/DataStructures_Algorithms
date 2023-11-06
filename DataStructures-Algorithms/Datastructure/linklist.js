@@ -1,3 +1,6 @@
+// LinkList: A data structure that contains a head, tail and length property.
+// Doubly Linked List: A data structure that contains a head, tail and length property.
+
 class Node {
   constructor(value) {
     this.value = value;
