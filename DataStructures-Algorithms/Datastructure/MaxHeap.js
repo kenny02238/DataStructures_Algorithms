@@ -1,7 +1,9 @@
-// let heapSize;
-// let arr = [15, 3, 17, 18, 20, 2, 1, 666];
-// heapSort();
-// console.log(arr);
+// MaxHeap is a complete binary tree, which means all levels are completely filled
+// except possibly the last level and the last level has all keys as left as possible.
+
+// Complete Binary Tree:
+// A Binary Tree is complete Binary Tree if all levels are completely filled except possibly
+// the last level and the last level has all keys as left as possible
 
 function buildMaxHeap() {
   heapSize = arr.length - 1;
@@ -65,3 +67,7 @@ function maxHeapifyPractice(i) {
 
 buildMaxHeapPractice();
 console.log(arr);
+// let heapSize;
+// let arr = [15, 3, 17, 18, 20, 2, 1, 666];
+// heapSort();
+// console.log(arr);
