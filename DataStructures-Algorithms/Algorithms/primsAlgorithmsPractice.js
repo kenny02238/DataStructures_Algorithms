@@ -2,10 +2,10 @@ class Node {
   constructor(value) {
     this.value = value;
     this.visited = false;
-    this.edge = [];
+    this.edges = [];
   }
   addNeighbor(edge) {
-    this.edge.push(edge);
+    this.edges.push(edge);
   }
 }
 
@@ -52,3 +52,62 @@ F.addNeighbor(e8);
 let e9 = new Edge(C, F, 8);
 C.addNeighbor(e9);
 F.addNeighbor(e9);
+
+let tempEdge = [];
+
+function mstPrim(startNode) {
+  let mstEdges = [];
+  for (let i = 0; i <= startNode.edges.length - 1; i++) {
+    tempEdge.push(startNode.edges[i]);
+  }
+
+  let currentVisitedNodeBestEdge = findMinEdge();
+
+  while (currentVisitedNodeBestEdge !== null) {
+    let n1 = currentVisitedNodeBestEdge.node1;
+    let n2 = currentVisitedNodeBestEdge.node2;
+    n1.visited = true;
+    n2.visited = true;
+    mstEdges.push(currentVisitedNodeBestEdge);
+    tempEdge = [];
+    //find which node is visited
+    allNodes.forEach((node) => {
+      if (node.visited) {
+        // For each edge edge, it checks whether the edge is not included in the mstEdges array,
+        // indicating that it has not been added to the minimum spanning tree (MST).
+        // If the edge is not already included in the MST (i.e., it's not in mstEdges),
+        // it adds the edge to the bucket array.
+        node.edges.forEach((edge) => {
+          if (!mstEdges.includes(edge)) {
+            tempEdge.push(edge);
+          }
+        });
+      }
+    });
+    currentVisitedNodeBestEdge = findMinEdge();
+  }
+
+  return mstEdges;
+}
+
+function findMinEdge() {
+  let minEdge = null;
+  while (minEdge === null && tempEdge.length !== 0) {
+    minEdge = tempEdge[0];
+    let index = 0;
+    tempEdge.forEach((edge, i) => {
+      if (edge.weight < minEdge.weight) {
+        minEdge = edge;
+        index = i;
+      }
+    });
+    if (minEdge.node1.visited && minEdge.node2.visited) {
+      tempEdge.splice(index, 1);
+      minEdge = null;
+    }
+  }
+
+  return minEdge;
+}
+
+console.log(mstPrim(A));
